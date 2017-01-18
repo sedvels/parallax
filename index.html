@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Espacial - Parallax</title>
+	<link rel="stylesheet" href="css/estilo.css" type="text/css" />
+</head>
+<body>
+	<section class="container">		
+		<figure class="iphone" id="iphone">
+			<img src="iphone.jpg" alt="">
+			<div class="shape" id="mask"></div>
+		</figure>
+	</section>
+	<script>
+		const $iphone = document.getElementById("iphone");
+		const $mask = document.getElementById("mask");
+		window.addEventListener("scroll",function(e){
+			console.log(window.scrollY);
+			//$iphone.style.backgroundPosition = window.scrollY + "px";
+			var position = 54 + window.scrollY;
+			$mask.style.backgroundPosition = "-" + position + "px";
+			$iphone.style.transform = "rotate(" + position * -.02 + "deg)";
+		});
+	</script>
+</body>
+</html>
